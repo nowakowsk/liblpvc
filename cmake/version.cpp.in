@@ -1,0 +1,29 @@
+// File auto-generated, do not edit.
+
+#include <lpvc/lpvc.h>
+
+
+namespace lpvc
+{
+
+
+unsigned int version() noexcept
+{
+  static_assert(sizeof(unsigned int) >= 3 &&
+                @PROJECT_VERSION_MAJOR@ >= 0 && @PROJECT_VERSION_MAJOR@ <= 255 &&
+                @PROJECT_VERSION_MINOR@ >= 0 && @PROJECT_VERSION_MINOR@ <= 255 &&
+                @PROJECT_VERSION_PATCH@ >= 0 && @PROJECT_VERSION_PATCH@ <= 255);
+
+  return (static_cast<unsigned int>(@PROJECT_VERSION_PATCH@) << 0) |
+         (static_cast<unsigned int>(@PROJECT_VERSION_MINOR@) << 8) |
+         (static_cast<unsigned int>(@PROJECT_VERSION_MAJOR@) << 16);
+}
+
+
+const char* versionString() noexcept
+{
+  return "@PROJECT_VERSION_MAJOR@.@PROJECT_VERSION_MINOR@.@PROJECT_VERSION_PATCH@";
+}
+
+
+} // namespace lpvc
