@@ -200,7 +200,7 @@ void PaletteBlock::decode(Decoder& decoder, BufferReader& bufferReader)
   decoder.decompressBuffer(bufferReader, decoder.internalBuffer_.data(), decoder.internalBuffer_.size());
   BufferReader internalBufferReader(decoder.internalBuffer_.data(), decoder.internalBuffer_.size());
 
-  Palette palette(internalBufferReader.readUInt8() + 1); // See PaletteBlock::encode.
+  Palette palette(static_cast<std::size_t>(internalBufferReader.readUInt8()) + 1); // See PaletteBlock::encode.
 
   for(Color& color : palette)
     color = readColor(internalBufferReader);
