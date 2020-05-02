@@ -235,7 +235,7 @@ struct NullBitmapBlock final
 struct EncoderSettings final
 {
   bool usePalette = true;
-  int zstdCompressionLevel = 13;
+  int zstdCompressionLevel = 18;
   int zstdWorkerCount = 1;
 };
 
