@@ -15,7 +15,7 @@ add_executable(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME}
-  liblpvc
+  liblpvc::liblpvc
   Catch2::Catch2
 )
 
@@ -23,6 +23,14 @@ set_target_properties(${PROJECT_NAME}
   PROPERTIES
     CXX_STANDARD 17
 )
+
+if(MSYS)
+  set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+      PREFIX ""
+      LINK_FLAGS "-static-libgcc -static-libstdc++"
+  )
+endif()
 
 
 ###############################################################################

@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(PROJECT_NAME liblpvc)
+set(PROJECT_VERSION 0.1.0)
+
+project(${PROJECT_NAME} VERSION ${PROJECT_VERSION})
+
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 include(CTest)
@@ -9,11 +14,6 @@ find_package(zstd REQUIRED)
 
 ###############################################################################
 # liblpvc
-
-set(PROJECT_NAME liblpvc)
-set(PROJECT_VERSION 0.1.0)
-
-project(${PROJECT_NAME} VERSION ${PROJECT_VERSION})
 
 configure_file("cmake/version.cpp.in" "${CMAKE_CURRENT_BINARY_DIR}/version.cpp" @ONLY)
 
@@ -46,6 +46,8 @@ set_target_properties(${PROJECT_NAME}
   PROPERTIES
     CXX_STANDARD 17
 )
+
+add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
 
 ###############################################################################
