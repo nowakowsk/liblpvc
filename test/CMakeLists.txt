@@ -24,14 +24,6 @@ set_target_properties(${PROJECT_NAME}
     CXX_STANDARD 17
 )
 
-if(MSYS)
-  set_target_properties(${PROJECT_NAME}
-    PROPERTIES
-      PREFIX ""
-      LINK_FLAGS "-static-libgcc -static-libstdc++"
-  )
-endif()
-
 
 ###############################################################################
 # CTest
