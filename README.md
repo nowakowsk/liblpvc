@@ -46,9 +46,5 @@ Following codecs were intentionally left out of the comparison as they produced 
 - JPEG 2000
 - Lagarith Lossless Video Codec
 
-# Warning
-
-This codec should be considered a research project. Do not use it for storing critical data. Do not use it in production environments. In fact, it is best if you don't use it at all, except for your own research and testing. For this reason I release it without license and warranty of any kind. You have been warned.
-
 [video001.avi]: ./docs/video001.avi
 [video002.avi]: ./docs/video002.avi
